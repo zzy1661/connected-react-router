@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { increment, decrement } from '../actions/counter'
+import { push } from 'connected-react-router';
 
 const Counter = (props) => (
   <div>
@@ -23,7 +24,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   increment: () => dispatch(increment()),
-  decrement: () => dispatch(decrement()),
+  decrement: () => dispatch(push('/')),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
